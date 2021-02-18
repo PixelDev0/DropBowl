@@ -1,0 +1,10 @@
+# Whether the plugin is enabled
+enabled: true
+
+# The permission node
+node: dropbowl.drop
+
+# Statistics
+# Send anonymous data to help improve the plugin!
+metrics:
+  enabled: true

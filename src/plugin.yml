@@ -1,0 +1,7 @@
+name: DropBowl
+description: Automatically drops bowls on soup use!
+
+main: dev.pixel0.DropBowl.DropBowl
+version: 1.0
+
+website:
