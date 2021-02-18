@@ -12,15 +12,16 @@ public class Interact implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent event) {
+        try {
+            if (event.getItem().getType().equals(Material.BOWL)) {
 
-        if (event.getItem().getType() == null) return;
+                if (!plugin.getConfig().getBoolean("enabled")) return;
+                if (!event.getPlayer().hasPermission(plugin.getConfig().getString("node"))) return;
 
-        if (event.getItem().getType().equals(Material.BOWL)) {
-
-            if (!plugin.getConfig().getBoolean("enabled")) return;
-            if (!event.getPlayer().hasPermission(plugin.getConfig().getString("node"))) return;
-
-            event.getPlayer().getInventory().remove(Material.BOWL);
+                event.getPlayer().getInventory().remove(Material.BOWL);
+            }
+        } catch (NullPointerException e) {
+            return;
         }
 
     }
